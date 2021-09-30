@@ -7,7 +7,7 @@
 # print(torch.cuda.is_available())
 # print(torch.cuda.get_device_name(0))
 
-# 20210928
+# 20210928 迭代300次模型：Best Prec@1: 26.865%
 # 跑通 baseline 300 epoch
 
 import os       # 打开文件夹用
@@ -18,7 +18,7 @@ from model import resnet34
 import config as cfg
 
 model = resnet34()
-checkpoint = torch.load("/ceph/home/yangsc21/kaggle/food_cls/ckpt/2/model_best.pth.tar")
+checkpoint = torch.load("/ceph/home/yangsc21/kaggle/food_cls/ckpt/300/model_best.pth.tar")    # 0903修改，这才是迭代300次的模型的位置，上次写错了
 model.load_state_dict(checkpoint['state_dict_model'])
 model.eval()
 model = model.cuda(cfg.gpu)
