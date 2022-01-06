@@ -2,7 +2,8 @@
 # import pandas as pd
 import csv
 
-root = r'C:\HCSI\SiCheng Yang\杨思程\我的资料库\我的坚果云\课程\大数据机器学习\第一次实验\\'
+# root = r'C:\HCSI\SiCheng Yang\杨思程\我的资料库\我的坚果云\课程\大数据机器学习\第一次实验\\'
+root = '/ceph/home/yangsc21/kaggle/'
 txt_path = root + 'result.txt'
 csv_path = root + 'submission.csv'
 

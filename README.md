@@ -13,7 +13,7 @@ Team Members：
 ---------------------------------------------------------------
 ## submission 1：Tue Sep 28 2021 20:15:31
 
-resnet34 模型 迭代1次
+resnet34 模型 迭代2次
 
 Public Score：0.04047
 rank：2/3
@@ -30,7 +30,31 @@ rank：2/3
 
 ![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0930.png)
 
-## submission 3
+## submission 3：Thu Jan 06 2022 22:02:43
+
+<details>
+<summary>250次迭代结果</summary>
+
+```python
+--------------------epoch: 249--------------------
+Training start ...
+100%|█████████████████████████████████████████| 138/138 [00:37<00:00,  3.70it/s]
+Wait for validation ...
+* Acc@1 27.756% Acc@5 36.205%.
+* Best Prec@1: 27.987%
+Finish !
+
+Process finished with exit code 0
+```
+</details>
+
+resnet50 模型 迭代250次 Best Prec@1: 27.987%
+
+Public Score：0.47945 rank：4/8
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0106.jpg)
+
+## submission 4
 
 
 ## 改进方向：Jan 06 2022

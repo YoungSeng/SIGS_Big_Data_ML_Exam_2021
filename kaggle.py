@@ -14,11 +14,13 @@ import os       # 打开文件夹用
 from torchvision import transforms
 from PIL import Image
 import torch
-from model import resnet34
+# from model import resnet34
+from model import ResNet50
 import config as cfg
 
-model = resnet34()
-checkpoint = torch.load("/ceph/home/yangsc21/kaggle/food_cls/ckpt/300/model_best.pth.tar")    # 0903修改，这才是迭代300次的模型的位置，上次写错了
+# model = resnet34()
+model = ResNet50()
+checkpoint = torch.load("/ceph/home/yangsc21/kaggle/food_cls/ckpt/ResNet50/model_best.pth.tar")    # 0903修改，这才是迭代300次的模型的位置，上次写错了
 model.load_state_dict(checkpoint['state_dict_model'])
 model.eval()
 model = model.cuda(cfg.gpu)
