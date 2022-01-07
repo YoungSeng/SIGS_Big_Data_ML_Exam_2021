@@ -32,6 +32,8 @@ rank：2/3
 
 ## submission 3：Thu Jan 06 2022 22:02:43
 
+resnet50 模型 迭代250次 Best Prec@1: 27.987%
+
 <details>
 <summary>250次迭代结果</summary>
 
@@ -48,14 +50,95 @@ Process finished with exit code 0
 ```
 </details>
 
-resnet50 模型 迭代250次 Best Prec@1: 27.987%
-
 Public Score：0.47945 rank：4/8
 
 ![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0106.jpg)
 
-## submission 4
+## submission 4 Jan 07 2022
 
+ResNet101  batch_size = 196 
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|█████████████████████████████████████████| 138/138 [01:02<00:00,  2.22it/s]
+Wait for validation ...
+* Acc@1 26.139% Acc@5 35.611%.
+* Best Prec@1: 26.898%
+Finish !
+```
+</details>
+
+Public Score：0.45594
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-1.jpg)
+
+ResNet152  batch_size = 128
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|███████████████████████████████████████████| 90/90 [00:50<00:00,  1.79it/s]
+Wait for validation ...
+* Acc@1 26.502% Acc@5 35.215%.
+* Best Prec@1: 26.964%
+Finish !
+```
+</details>
+
+Public Score：0.46522
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-2.jpg)
+
+ResNet101  batch_size = 128 Adam
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:48<00:00,  2.83it/s]
+Wait for validation ...
+* Acc@1 26.733% Acc@5 35.149%.
+* Best Prec@1: 27.129%
+Finish !
+```
+</details>
+
+Public Score：0.45643
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-3.jpg)
+
+ResNet152 batch_size = 128 Adam
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [01:04<00:00,  2.13it/s]
+Wait for validation ...
+* Acc@1 26.403% Acc@5 34.719%.
+* Best Prec@1: 26.964%
+Finish !
+```
+</details>
+
+Public Score：0.45358
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-4.jpg)
+
+结论：
+1. Resnet101和Resnet152对结果没有改善，可能因为数据集比较小；
+2. Adam较SGD相比对结果没有改善。
 
 ## 改进方向：Jan 06 2022
 
@@ -65,12 +148,16 @@ Public Score：0.47945 rank：4/8
 
 
 <details>
-<summary>每种类别的数量</summary>
+<summary>训练集每种类别的数量</summary>
 
 ```python
 [800, 763, 729, 696, 665, 635, 606, 579, 553, 528, 504, 482, 460, 439, 419, 400, 382, 365, 349, 333, 318, 304, 290, 277, 264, 252, 241, 230, 220, 210, 200, 191, 183, 175, 167, 159, 152, 145, 139, 132, 126, 121, 115, 110, 105, 100, 96, 91, 87, 83, 80, 76, 72, 69, 66, 63, 60, 57, 55, 52, 50, 48, 46, 43, 41, 40, 38, 36, 34, 33, 31, 30, 29, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 15, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 8]
 ```
 </details>
+
+### 训练集和验证集整体划分数据集：Jan 07 2022
+
+
 
 ### 尝试不同模型
 

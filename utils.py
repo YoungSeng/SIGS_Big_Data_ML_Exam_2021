@@ -87,11 +87,11 @@ def adjust_learning_rate(optimizer, epoch, cfg):
 
 def save_checkpoint(state, is_best, model_dir):
     ''' save ckeck point current and the best '''
-    filename = model_dir + 'food_cls/ckpt/current.pth.tar'    # 0928修改
+    filename = model_dir + 'food_cls/ckpt/current_resnet101_Adam.pth.tar'    # 0928修改
     # filename = model_dir + '/ckpt/current.pth'
     torch.save(state, filename)
     if is_best:
-       shutil.copyfile(filename, model_dir + 'food_cls/ckpt/model_best.pth.tar')
+       shutil.copyfile(filename, model_dir + 'food_cls/ckpt/model_best_resnet101_Adam.pth.tar')
        # shutil.copyfile(filename, model_dir + '/ckpt/model_best.pth')
      
         
