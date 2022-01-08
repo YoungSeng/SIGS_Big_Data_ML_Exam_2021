@@ -302,7 +302,13 @@ Finish !
 
 <center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-4.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-5.jpg" /></figure></center>
 
+
+
+
 <center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-6.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-7.jpg" /></figure></center>
+
+
+
 
 ### 尝试不同模型
 
@@ -336,14 +342,66 @@ Finish !
 14. EfficientNet-B7
 
 
-## submission 15-16： Jan 08 2022
+## submission 15-17： Jan 08 2022
 
 densenet121
 
-densenet169
+<details>
+<summary>densenet121：200次迭代结果</summary>
 
-## submission 17： Jan 08 2022
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:53<00:00,  2.56it/s]
+Wait for validation ...
+* Acc@1 25.380% Acc@5 36.007%.
+* Best Prec@1: 25.578%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-8.jpg)
+
+densenet161
+
+<details>
+<summary>densenet161：200次迭代结果</summary>
+
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [01:13<00:00,  1.87it/s]
+Wait for validation ...
+* Acc@1 25.446% Acc@5 35.644%.
+* Best Prec@1: 25.809%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-9.jpg)
 
 efficientnet_b0
 
+<details>
+<summary>efficientnet_b0：200次迭代结果</summary>
 
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:56<00:00,  2.46it/s]
+Wait for validation ...
+* Acc@1 24.488% Acc@5 35.908%.
+* Best Prec@1: 25.149%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-10.jpg)
+
+## submission 18： Jan 09 2022
+
+efficientnet_b1 3
+
+regnet_x_1_6gf 1
+
+regnet_x_3_2gf 2

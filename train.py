@@ -13,14 +13,52 @@ from torch.utils.data import Dataset
 
 from dataset import Food_LT
 # from model import resnet34
-# from model import ResNet50
+from model import ResNet50
 # from model import ResNet101
 # from model import ResNet152
 # from DenseNet import densenet121
 # from DenseNet import densenet161
-from EfficientNet import efficientnet_b0
+# from EfficientNet import efficientnet_b0
+# from EfficientNet import efficientnet_b1
+# from Regnet import regnet_x_1_6gf
+from Regnet import regnet_x_3_2gf
 import config as cfg
 from utils import adjust_learning_rate, save_checkpoint, train, validate, logger
+
+
+
+# class EMA():
+#     def __init__(self, model, decay):
+#         self.model = model
+#         self.decay = decay
+#         self.shadow = {}
+#         self.backup = {}
+#
+#     def register(self):
+#         for name, param in self.model.named_parameters():
+#             if param.requires_grad:
+#                 self.shadow[name] = param.data.clone()
+#
+#     def update(self):
+#         for name, param in self.model.named_parameters():
+#             if param.requires_grad:
+#                 assert name in self.shadow
+#                 new_average = (1.0 - self.decay) * param.data.cpu() + self.decay * self.shadow[name]
+#                 self.shadow[name] = new_average.clone()
+#
+#     def apply_shadow(self):
+#         for name, param in self.model.named_parameters():
+#             if param.requires_grad:
+#                 assert name in self.shadow
+#                 self.backup[name] = param.data
+#                 param.data = self.shadow[name].cuda()
+#
+#     def restore(self):
+#         for name, param in self.model.named_parameters():
+#             if param.requires_grad:
+#                 assert name in self.backup
+#                 param.data = self.backup[name].cuda()
+#         self.backup = {}
 
 
 def main():
@@ -30,7 +68,12 @@ def main():
     # model = ResNet152()
     # model = densenet121()
     # model = densenet161()
-    model = efficientnet_b0()
+    # model = efficientnet_b0()
+    # model = efficientnet_b1()
+    model = regnet_x_3_2gf()
+
+    # ema = EMA(model, 0.999)
+    # ema.register()
 
     if cfg.resume:
         ''' plz implement the resume code by ur self! '''
@@ -83,6 +126,8 @@ def main():
             'state_dict_model': model.state_dict(),
             'best_acc': best_acc,
         }, is_best, cfg.root)
+
+
 
     print('Finish !')
 

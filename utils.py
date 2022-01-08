@@ -6,6 +6,7 @@ import torch
 import torch.nn.functional as F
 from tqdm import tqdm
 import config as cfg
+import pickle
 
 
 class AverageMeter(object):           
@@ -85,17 +86,21 @@ def adjust_learning_rate(optimizer, epoch, cfg):
         param_group['lr'] = lr
 
 
-def save_checkpoint(state, is_best, model_dir):
+def save_checkpoint(state, is_best, model_dir, ema=None):
     ''' save ckeck point current and the best '''
-    filename = model_dir + 'food_cls/ckpt/current_efficientnet_b0.pth.tar'    # 0928修改
+    filename = model_dir + 'food_cls/ckpt/current_regnet_x_3_2gf.pth.tar'    # 0928修改
     # filename = model_dir + '/ckpt/current.pth'
     torch.save(state, filename)
     if is_best:
-       shutil.copyfile(filename, model_dir + 'food_cls/ckpt/model_best_efficientnet_b0.pth.tar')
+       shutil.copyfile(filename, model_dir + 'food_cls/ckpt/model_best_regnet_x_3_2gf.pth.tar')
+       # out_put = open(model_dir + 'food_cls/ckpt/model_ema.pkl', 'wb')
+       # ema_str = pickle.dumps(ema)
+       # out_put.write(ema_str)
+       # out_put.close()
        # shutil.copyfile(filename, model_dir + '/ckpt/model_best.pth')
      
         
-def train(train_loader, model, criterion, optimizer, epoch):
+def train(train_loader, model, criterion, optimizer, epoch, ema=None):
     batch_time = AverageMeter('Time', ':6.3f')
     data_time = AverageMeter('Data', ':6.3f')
     losses = AverageMeter('Loss', ':.3f')
@@ -129,6 +134,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        # ema.update()
 
         # measure elapsed time
         batch_time.update(time.time() - end)
@@ -142,7 +148,9 @@ def train(train_loader, model, criterion, optimizer, epoch):
     return
 
 
-def validate(val_loader, model, criterion):
+def validate(val_loader, model, criterion, ema=None):
+    # ema.apply_shadow()
+
     batch_time = AverageMeter('Time', ':6.3f')
     losses = AverageMeter('Loss', ':.3f')
     top1 = AverageMeter('Acc@1', ':6.3f')
@@ -193,4 +201,5 @@ def validate(val_loader, model, criterion):
 
         logger('* Acc@1 {top1.avg:.3f}% Acc@5 {top5.avg:.3f}%.'.format(top1=top1, top5=top5))
 
+    # ema.restore()
     return top1.avg
