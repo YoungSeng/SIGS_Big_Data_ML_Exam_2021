@@ -13,8 +13,8 @@ from torch.utils.data import Dataset
 
 from dataset import Food_LT
 # from model import resnet34
-# from model import ResNet50
-from model import ResNet101
+from model import ResNet50
+# from model import ResNet101
 # from model import ResNet152
 import config as cfg
 from utils import adjust_learning_rate, save_checkpoint, train, validate, logger
@@ -22,8 +22,8 @@ from utils import adjust_learning_rate, save_checkpoint, train, validate, logger
 
 def main():
     # model = resnet34()
-    # model = ResNet50()
-    model = ResNet101()
+    model = ResNet50()
+    # model = ResNet101()
     # model = ResNet152()
     if cfg.resume:
         ''' plz implement the resume code by ur self! '''
@@ -48,10 +48,10 @@ def main():
     val_loader = dataset.eval
     
     criterion = nn.CrossEntropyLoss().cuda(cfg.gpu)
-    # optimizer = torch.optim.SGD([{"params": model.parameters()}], cfg.lr,
-    #                             momentum=cfg.momentum,
-    #                             weight_decay=cfg.weight_decay)
-    optimizer = torch.optim.Adam([{"params": model.parameters()}])
+    optimizer = torch.optim.SGD([{"params": model.parameters()}], cfg.lr,
+                                momentum=cfg.momentum,
+                                weight_decay=cfg.weight_decay)
+    # optimizer = torch.optim.Adam([{"params": model.parameters()}])
     
     best_acc = 0
     for epoch in range(cfg.num_epochs):

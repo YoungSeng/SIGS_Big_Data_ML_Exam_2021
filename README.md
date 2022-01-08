@@ -37,7 +37,7 @@ resnet50 模型 迭代250次 Best Prec@1: 27.987%
 <details>
 <summary>250次迭代结果</summary>
 
-```python
+```
 --------------------epoch: 249--------------------
 Training start ...
 100%|█████████████████████████████████████████| 138/138 [00:37<00:00,  3.70it/s]
@@ -54,7 +54,7 @@ Public Score：0.47945 rank：4/8
 
 ![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0106.jpg)
 
-## submission 4 Jan 07 2022
+## submission 4-7： Jan 07 2022
 
 ResNet101  batch_size = 196 
 
@@ -155,9 +155,89 @@ Public Score：0.45358
 ```
 </details>
 
-### 训练集和验证集整体划分数据集：Jan 07 2022
+### submission 8-10： Jan 07 2022
 
+训练集和验证集整体划分数据集：Jan 07 2022
 
+将原数据集的train和val混合，重新划分80%为训练集，20%为验证集
+
+由于random split划分数据集的随机性，基于Resnet50进行两次实验，基于Resnet101进行一次实验。
+
+Resnet50 第一次实验 
+
+Best Prec@1: 61.865%
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 129/129 [00:33<00:00,  3.90it/s]
+Wait for validation ...
+* Acc@1 61.355% Acc@5 79.888%.
+* Best Prec@1: 61.865%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-1.jpg)
+
+Resnet50 第二次实验
+
+Best Prec@1: 63.201%
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 129/129 [00:54<00:00,  2.37it/s]
+Wait for validation ...
+* Acc@1 61.671% Acc@5 80.763%.
+* Best Prec@1: 63.201%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-2.jpg)
+
+Resnet101 实验
+
+Best Prec@1: 61.404%
+
+<details>
+<summary>300次迭代结果</summary>
+
+```
+--------------------epoch: 299--------------------
+Training start ...
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 129/129 [00:41<00:00,  3.12it/s]
+Wait for validation ...
+* Acc@1 58.076% Acc@5 78.237%.
+* Best Prec@1: 61.404%
+Finish !
+```
+</details>
+
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-3.jpg)
+
+现在出现了一个很奇怪的现象，之前的模型最好的验证集准确率不到30%，而现在验证集准确率接近60%，
+但是效果反而变差了，之前在kaggle上的测试集效果比现在好，很奇怪。
+
+验证集共有3030张图片，如果拿1010张图片加入训练集，剩下2020张图片作为验证集呢？
+
+### submission 11-14： Jan 08 2022
+
+将验证集的一部分拿来加入训练集，结果如下：
+
+| train from valid | Best Prec | Public Score |
+| ------------- | ------------- | ------------- |
+| 1/5 | Content Cell | Content Cell |
+| 1/4 | Content Cell | Content Cell |
+| 1/3 | Content Cell | Content Cell |
+| 1/2 | Content Cell | Content Cell |
 
 ### 尝试不同模型
 
