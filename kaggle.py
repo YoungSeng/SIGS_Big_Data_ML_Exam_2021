@@ -15,17 +15,17 @@ from torchvision import transforms
 from PIL import Image
 import torch
 # from model import resnet34
-# from model import ResNet50
-from model import ResNet101
+from model import ResNet50
+# from model import ResNet101
 # from model import ResNet152
 import config as cfg
 
 # model = resnet34()
-# model = ResNet50()
-model = ResNet101()
+model = ResNet50()
+# model = ResNet101()
 # model = ResNet152()
 checkpoint = torch.load(
-    "/ceph/home/yangsc21/kaggle/food_cls/ckpt/resnet101/Mix/model_best_resnet101_Mix.pth.tar")  # 最好模型的位置
+    "/ceph/home/yangsc21/kaggle/food_cls/ckpt/ResNet50/train_from_valid/1-5/model_best_resnet50_Split_1_5.pth.tar")  # 最好模型的位置
 model.load_state_dict(checkpoint['state_dict_model'])
 model.eval()
 model = model.cuda(cfg.gpu)

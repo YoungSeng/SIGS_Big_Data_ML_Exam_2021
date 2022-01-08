@@ -13,18 +13,25 @@ from torch.utils.data import Dataset
 
 from dataset import Food_LT
 # from model import resnet34
-from model import ResNet50
+# from model import ResNet50
 # from model import ResNet101
 # from model import ResNet152
+# from DenseNet import densenet121
+# from DenseNet import densenet161
+from EfficientNet import efficientnet_b0
 import config as cfg
 from utils import adjust_learning_rate, save_checkpoint, train, validate, logger
 
 
 def main():
     # model = resnet34()
-    model = ResNet50()
+    # model = ResNet50()
     # model = ResNet101()
     # model = ResNet152()
+    # model = densenet121()
+    # model = densenet161()
+    model = efficientnet_b0()
+
     if cfg.resume:
         ''' plz implement the resume code by ur self! '''
         pass
@@ -40,6 +47,9 @@ def main():
         print('Use cuda !')
         torch.cuda.set_device(cfg.gpu)
         model = model.cuda(cfg.gpu)
+        # model.to('cuda')  # 先把模型放到当前进程的GPU中去
+        # print(range(torch.cuda.device_count()))
+        # model = torch.nn.DataParallel(model, device_ids=list(range(torch.cuda.device_count())))
 
     print('Load dataset ...')
     dataset = Food_LT(False, root=cfg.root, batch_size=cfg.batch_size, num_works=4)

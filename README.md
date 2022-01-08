@@ -221,23 +221,88 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-3.jpg)
+<img width="600" src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-3.jpg"/>
+
+[comment]: <> (![image]&#40;https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-3.jpg&#41;)
 
 现在出现了一个很奇怪的现象，之前的模型最好的验证集准确率不到30%，而现在验证集准确率接近60%，
 但是效果反而变差了，之前在kaggle上的测试集效果比现在好，很奇怪。
 
-验证集共有3030张图片，如果拿1010张图片加入训练集，剩下2020张图片作为验证集呢？
+验证集共有3030张图片，如果拿1/3(1010)张图片加入训练集，剩下2020张图片作为验证集呢？
 
 ### submission 11-14： Jan 08 2022
 
 将验证集的一部分拿来加入训练集，结果如下：
 
+<div class="center">
+
 | train from valid | Best Prec | Public Score |
-| ------------- | ------------- | ------------- |
-| 1/5 | Content Cell | Content Cell |
-| 1/4 | Content Cell | Content Cell |
-| 1/3 | Content Cell | Content Cell |
-| 1/2 | Content Cell | Content Cell |
+| :-------------: | :-------------: | :-------------: |
+| 1/5 | 28.630% | 0.40272 |
+| 1/4 | 28.993% | 0.36943 |
+| 1/3 | 24.604% | 0.34950 |
+| 1/2 | 30.693% | 0.36608 |
+
+</div>
+
+
+<details>
+<summary>1/5：200次迭代结果</summary>
+
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 142/142 [00:58<00:00,  2.41it/s]
+Wait for validation ...
+* Acc@1 28.094% Acc@5 46.535%.
+* Best Prec@1: 28.630%
+Finish !
+```
+</details>
+<details>
+<summary>1/4：200次迭代结果</summary>
+
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 144/144 [00:35<00:00,  4.07it/s]
+Wait for validation ...
+* Acc@1 28.289% Acc@5 45.799%.
+* Best Prec@1: 28.993%
+Finish !
+```
+</details>
+<details>
+<summary>1/3：200次迭代结果</summary>
+
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 146/146 [01:06<00:00,  2.21it/s]
+Wait for validation ...
+* Acc@1 23.762% Acc@5 40.149%.
+* Best Prec@1: 24.604%
+Finish !
+```
+</details>
+<details>
+<summary>1/2：200次迭代结果</summary>
+
+```
+--------------------epoch: 199--------------------
+Training start ...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 149/149 [00:39<00:00,  3.81it/s]
+Wait for validation ...
+* Acc@1 29.637% Acc@5 56.832%.
+* Best Prec@1: 30.693%
+Finish !
+```
+</details>
+
+
+<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-4.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-5.jpg" /></figure></center>
+
+<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-6.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-7.jpg" /></figure></center>
 
 ### 尝试不同模型
 
@@ -269,3 +334,16 @@ Finish !
 12. SENet
 13. AmoebaNet-C
 14. EfficientNet-B7
+
+
+## submission 15-16： Jan 08 2022
+
+densenet121
+
+densenet169
+
+## submission 17： Jan 08 2022
+
+efficientnet_b0
+
+
