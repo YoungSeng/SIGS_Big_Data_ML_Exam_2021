@@ -398,7 +398,7 @@ Finish !
 
 ![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-10.jpg)
 
-## submission 18： Jan 10 2022
+## submission 18...： Jan 10 2022
 
 efficientnet_b1
 
@@ -496,4 +496,4 @@ Finish !
 ```
 </details>
 
-
+这些结果的Best Prec都没有Resnet50的那次结果好，所以也没有提交到kaggle上
