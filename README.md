@@ -18,7 +18,7 @@ resnet34 模型 迭代2次
 Public Score：0.04047
 rank：2/3
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle.png)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle.png)
 
 ## submission 2：Thu Sep 30 2021 15:43:51
 
@@ -28,7 +28,7 @@ Best Prec@1: 26.865%
 Public Score：0.46225
 rank：2/3
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0930.png)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0930.png)
 
 ## submission 3：Thu Jan 06 2022 22:02:43
 
@@ -52,7 +52,7 @@ Process finished with exit code 0
 
 Public Score：0.47945 rank：4/8
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0106.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0106.jpg)
 
 ## submission 4-7： Jan 07 2022
 
@@ -74,7 +74,7 @@ Finish !
 
 Public Score：0.45594
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-1.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0107-1.jpg)
 
 ResNet152  batch_size = 128
 
@@ -94,7 +94,7 @@ Finish !
 
 Public Score：0.46522
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-2.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0107-2.jpg)
 
 ResNet101  batch_size = 128 Adam
 
@@ -114,7 +114,7 @@ Finish !
 
 Public Score：0.45643
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-3.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0107-3.jpg)
 
 ResNet152 batch_size = 128 Adam
 
@@ -134,7 +134,7 @@ Finish !
 
 Public Score：0.45358
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0107-4.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0107-4.jpg)
 
 结论：
 1. Resnet101和Resnet152对结果没有改善，可能因为数据集比较小；
@@ -181,7 +181,7 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-1.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-1.jpg)
 
 Resnet50 第二次实验
 
@@ -201,7 +201,7 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-2.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-2.jpg)
 
 Resnet101 实验
 
@@ -300,12 +300,12 @@ Finish !
 </details>
 
 
-<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-4.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-5.jpg" /></figure></center>
+<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-4.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-5.jpg" /></figure></center>
 
 
 
 
-<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-6.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-7.jpg" /></figure></center>
+<center><figure><img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-6.jpg" />···<img src="https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-7.jpg" /></figure></center>
 
 
 
@@ -360,7 +360,7 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-8.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-8.jpg)
 
 densenet161
 
@@ -378,7 +378,7 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-9.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-9.jpg)
 
 efficientnet_b0
 
@@ -396,7 +396,7 @@ Finish !
 ```
 </details>
 
-![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle-0108-10.jpg)
+![image](https://github.com/YoungSeng/SIGS_Big_Data_ML_Exam_2021/blob/master/kaggle_result/kaggle-0108-10.jpg)
 
 ## submission 18： Jan 10 2022
 
