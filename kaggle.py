@@ -19,8 +19,16 @@ import torch
 # from model import ResNet101
 # from model import ResNet152
 # from EfficientNet import efficientnet_b0
+# from EfficientNet import efficientnet_b1
 # from DenseNet import densenet121
-from DenseNet import densenet161
+# from DenseNet import densenet161
+# from Regnet import regnet_x_1_6gf
+# from Regnet import regnet_x_3_2gf
+# from EfficientNet import efficientnet_b2
+# from EfficientNet import efficientnet_b3
+# from EfficientNet import efficientnet_b4
+# from Regnet import regnet_x_800mf
+from Regnet import regnet_x_8gf
 
 import config as cfg
 
@@ -29,10 +37,18 @@ import config as cfg
 # model = ResNet101()
 # model = ResNet152()
 # model = efficientnet_b0()
-model = densenet161()
+# model = efficientnet_b1()
+# model = densenet161()
+# model = regnet_x_1_6gf()
+# model = regnet_x_3_2gf()
+# model = efficientnet_b2()
+# model = efficientnet_b3()
+# model = regnet_x_800mf()
+# model = efficientnet_b4()
+model = regnet_x_8gf()
 
 checkpoint = torch.load(
-    "/ceph/home/yangsc21/kaggle/food_cls/ckpt/Densenet161/model_best_densenet161.pth.tar")  # 最好模型的位置
+    "/ceph/home/yangsc21/kaggle/food_cls/ckpt/model_best_regnet_x_8gf.pth.tar")  # 最好模型的位置
 model.load_state_dict(checkpoint['state_dict_model'])
 model.eval()
 model = model.cuda(cfg.gpu)

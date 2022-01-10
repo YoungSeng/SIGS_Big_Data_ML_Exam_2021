@@ -20,8 +20,16 @@ from model import ResNet50
 # from DenseNet import densenet161
 # from EfficientNet import efficientnet_b0
 # from EfficientNet import efficientnet_b1
+# from EfficientNet import efficientnet_b2
+# from EfficientNet import efficientnet_b3
+# from EfficientNet import efficientnet_b4
+# from EfficientNet import efficientnet_b5    # 内存不足
 # from Regnet import regnet_x_1_6gf
-from Regnet import regnet_x_3_2gf
+# from Regnet import regnet_x_3_2gf
+# from Regnet import regnet_x_800mf
+# from Regnet import regnet_x_400mf
+from Regnet import regnet_x_8gf
+
 import config as cfg
 from utils import adjust_learning_rate, save_checkpoint, train, validate, logger
 
@@ -70,8 +78,15 @@ def main():
     # model = densenet161()
     # model = efficientnet_b0()
     # model = efficientnet_b1()
-    model = regnet_x_3_2gf()
-
+    # model = regnet_x_3_2gf()
+    # model = efficientnet_b2()
+    # model = regnet_x_800mf()
+    # model = efficientnet_b3()
+    # model = efficientnet_b4()
+    # model = efficientnet_b5()
+    # model = regnet_x_400mf()
+    model = regnet_x_8gf()
+    
     # ema = EMA(model, 0.999)
     # ema.register()
 
